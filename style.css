@@ -157,17 +157,78 @@ p {
   color: var(--ink);
 }
 
+
+/* =========================================
+   PROFILE LINKS - OFFICIAL BRAND COLORS
+========================================= */
+
 .profile-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 9px 18px;
-  margin-top: 23px;
+  align-items: center;
+  gap: 12px 22px;
+  margin-top: 24px;
 }
 
 .profile-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   font-size: 16px;
   font-weight: 600;
+  text-decoration: none;
+  padding-bottom: 3px;
+  border-bottom: 1px solid currentColor;
+  transition: opacity 0.2s ease;
 }
+
+/* Icons inherit the text color */
+.profile-links a i {
+  font-size: 16px;
+  width: 18px;
+  text-align: center;
+  color: inherit;
+}
+
+/* Brand colors */
+
+.profile-links .email {
+  color: #EA4335;
+}
+
+.profile-links .scholar {
+  color: #4285F4;
+}
+
+.profile-links .github {
+  color: #24292F;
+}
+
+.profile-links .linkedin {
+  color: #0A66C2;
+}
+
+.profile-links .orcid {
+  color: #638000;
+}
+
+/* Hover effect */
+.profile-links a:hover {
+  opacity: 0.7;
+  text-decoration: none;
+}
+
+/* Mobile */
+@media (max-width: 690px) {
+  .profile-links {
+    gap: 12px 18px;
+  }
+
+  .profile-links a {
+    font-size: 15px;
+  }
+}
+
 
 /* =========================================
    HEADSHOT - HIGH QUALITY DISPLAY
