@@ -157,9 +157,8 @@ p {
   color: var(--ink);
 }
 
-
 /* =========================================
-   PROFILE LINKS - OFFICIAL BRAND COLORS
+   PROFILE LINKS - BRAND COLORS
 ========================================= */
 
 .profile-links {
@@ -182,33 +181,41 @@ p {
   transition: opacity 0.2s ease;
 }
 
-/* Icons inherit the text color */
 .profile-links a i {
-  font-size: 16px;
+  display: inline-block;
   width: 18px;
+  font-size: 16px;
   text-align: center;
   color: inherit;
 }
 
-/* Brand colors */
-
-.profile-links .email {
+/* Email - Gmail red */
+.profile-links a.email,
+.profile-links a.email i {
   color: #EA4335;
 }
 
-.profile-links .scholar {
+/* Google Scholar - Google blue */
+.profile-links a.scholar,
+.profile-links a.scholar i {
   color: #4285F4;
 }
 
-.profile-links .github {
+/* GitHub - dark charcoal */
+.profile-links a.github,
+.profile-links a.github i {
   color: #24292F;
 }
 
-.profile-links .linkedin {
+/* LinkedIn - official blue */
+.profile-links a.linkedin,
+.profile-links a.linkedin i {
   color: #0A66C2;
 }
 
-.profile-links .orcid {
+/* ORCID - accessible dark green */
+.profile-links a.orcid,
+.profile-links a.orcid i {
   color: #638000;
 }
 
@@ -218,20 +225,8 @@ p {
   text-decoration: none;
 }
 
-/* Mobile */
-@media (max-width: 690px) {
-  .profile-links {
-    gap: 12px 18px;
-  }
-
-  .profile-links a {
-    font-size: 15px;
-  }
-}
-
-
 /* =========================================
-   HEADSHOT - HIGH QUALITY DISPLAY
+   HEADSHOT
 ========================================= */
 
 .portrait-slot {
@@ -243,26 +238,15 @@ p {
 
 .portrait {
   display: block;
-
   width: 100%;
   height: auto;
-
-  /* Preserve original 2400 x 3600 proportion */
   aspect-ratio: 2 / 3;
-
-  /* Show complete photograph without cropping */
   object-fit: contain;
   object-position: center;
-
-  /* Clean professional appearance */
   border-radius: 6px;
-
-  /* Prevent unnecessary visual effects */
   filter: none;
   transform: none;
 }
-
-/* Optional note below photograph */
 
 .portrait-note {
   font-size: 12px;
@@ -282,6 +266,114 @@ p {
 .research-item p {
   color: #484d52;
   margin: 0;
+}
+
+/* =========================================
+   PUBLICATIONS
+========================================= */
+
+.pub-heading {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 26px 0 18px;
+}
+
+/* Compact featured publication layout */
+.featured-publication {
+  display: grid;
+  grid-template-columns: 100px minmax(0, 1fr);
+  gap: 18px;
+  align-items: start;
+  margin-bottom: 26px;
+}
+
+/* Small thumbnail without distortion */
+.publication-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 85px;
+  object-fit: contain;
+  object-position: center;
+  border: none;
+  border-radius: 3px;
+  background: transparent;
+}
+
+/* Paper title */
+.publication-info h3 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.4;
+  margin: 0 0 6px;
+}
+
+/* Authors */
+.pub-authors {
+  font-size: 15px;
+  color: var(--ink);
+  line-height: 1.5;
+  margin: 0 0 3px;
+}
+
+/* Journal / conference */
+.pub-venue {
+  font-size: 15px;
+  font-style: italic;
+  color: var(--sub);
+  margin: 0 0 8px;
+}
+
+/* Short research description */
+.pub-description {
+  font-size: 15px;
+  color: #484d52;
+  line-height: 1.55;
+  margin: 0 0 9px;
+}
+
+/* PDF and DOI links */
+.pub-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.pub-links a {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--red);
+}
+
+.pub-links a:hover {
+  text-decoration: underline;
+}
+
+/* Other publications */
+.publication-list {
+  padding-left: 24px;
+  margin: 0;
+}
+
+.publication-list li {
+  padding-left: 5px;
+  margin-bottom: 15px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.publication-list a {
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Google Scholar link */
+.all-publications {
+  margin-top: 25px;
+  font-size: 15px;
+  font-weight: 600;
 }
 
 /* =========================================
@@ -359,142 +451,90 @@ footer {
     padding-top: 35px;
   }
 
-  /* Headshot appears above introduction on mobile */
   .intro .portrait-slot {
     grid-row: 1;
     width: 180px;
     max-width: 100%;
-    margin: 0;}
+    margin: 0;
+  }
 
   .portrait {
     width: 100%;
     height: auto;
     aspect-ratio: 2 / 3;
-    object-fit: contain;}.portrait-note {text-align: left;}.section {padding: 34px 0;}
+    object-fit: contain;
+  }
 
-  h1 {font-size: 38px;}
-  h2 {font-size: 23px;}
+  .portrait-note {
+    text-align: left;
+  }
 
-  .experience-item {display: block;}.experience-meta {display: none;}}
+  .section {
+    padding: 34px 0;
+  }
 
-/* =========================================
-   ACCESSIBILITY
-========================================= */
-@media (prefers-reduced-motion: reduce) {html {scroll-behavior: auto;}}
+  h1 {
+    font-size: 38px;
+  }
 
+  h2 {
+    font-size: 23px;
+  }
 
-/* =========================================
-   PUBLICATIONS
-========================================= */
+  /* Profile links */
+  .profile-links {
+    gap: 12px 18px;
+  }
 
-.pub-heading {
-  font-size: 17px;
-  font-weight: 700;
-  color: var(--ink);
-  margin: 26px 0 18px;
-}
+  .profile-links a {
+    font-size: 15px;
+  }
 
-.featured-publication {
-  display: grid;
-  grid-template-columns: 165px minmax(0, 1fr);
-  gap: 22px;
-  align-items: start;
-  margin-bottom: 30px;
-}
-
-.publication-image {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: contain;
-  border: 1px solid var(--line);
-  border-radius: 4px;
-  background: #fff;
-}
-
-.publication-info h3 {
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 1.4;
-  margin: 0 0 6px;
-}
-
-.pub-authors {
-  font-size: 15px;
-  color: var(--ink);
-  line-height: 1.5;
-  margin: 0 0 3px;
-}
-
-.pub-venue {
-  font-size: 15px;
-  font-style: italic;
-  color: var(--sub);
-  margin: 0 0 8px;
-}
-
-.pub-description {
-  font-size: 15px;
-  color: #484d52;
-  line-height: 1.55;
-  margin: 0 0 9px;
-}
-
-.pub-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-}
-
-.pub-links a {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--red);
-}
-
-.publication-list {
-  padding-left: 24px;
-  margin: 0;
-}
-
-.publication-list li {
-  padding-left: 5px;
-  margin-bottom: 15px;
-  font-size: 16px;
-  line-height: 1.6;
-}
-
-.publication-list a {
-  font-size: 14px;
-  font-weight: 600;
-  white-space: nowrap;
-}
-
-.all-publications {
-  margin-top: 25px;
-  font-size: 15px;
-  font-weight: 600;
-}
-
-/* MOBILE */
-@media (max-width: 690px) {
+  /* Smaller publication thumbnails */
   .featured-publication {
-    grid-template-columns: 100px minmax(0, 1fr);
-    gap: 14px;
+    grid-template-columns: 80px minmax(0, 1fr);
+    gap: 12px;
+    margin-bottom: 23px;
+  }
+
+  .publication-image {
+    max-height: 70px;
   }
 
   .publication-info h3 {
     font-size: 16px;
   }
 
+  .pub-authors,
+  .pub-venue,
   .pub-description {
     font-size: 14px;
   }
 
-  .publication-image {
-    aspect-ratio: 4 / 3;
-  }
-
   .publication-list li {
     font-size: 15px;
+  }
+
+  /* Experience */
+  .experience-item {
+    display: block;
+  }
+
+  .experience-meta {
+    display: none;
+  }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .profile-links a {
+    transition: none;
   }
 }
