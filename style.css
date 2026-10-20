@@ -381,3 +381,120 @@ footer {
    ACCESSIBILITY
 ========================================= */
 @media (prefers-reduced-motion: reduce) {html {scroll-behavior: auto;}}
+
+
+/* =========================================
+   PUBLICATIONS
+========================================= */
+
+.pub-heading {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 26px 0 18px;
+}
+
+.featured-publication {
+  display: grid;
+  grid-template-columns: 165px minmax(0, 1fr);
+  gap: 22px;
+  align-items: start;
+  margin-bottom: 30px;
+}
+
+.publication-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: #fff;
+}
+
+.publication-info h3 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.4;
+  margin: 0 0 6px;
+}
+
+.pub-authors {
+  font-size: 15px;
+  color: var(--ink);
+  line-height: 1.5;
+  margin: 0 0 3px;
+}
+
+.pub-venue {
+  font-size: 15px;
+  font-style: italic;
+  color: var(--sub);
+  margin: 0 0 8px;
+}
+
+.pub-description {
+  font-size: 15px;
+  color: #484d52;
+  line-height: 1.55;
+  margin: 0 0 9px;
+}
+
+.pub-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.pub-links a {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--red);
+}
+
+.publication-list {
+  padding-left: 24px;
+  margin: 0;
+}
+
+.publication-list li {
+  padding-left: 5px;
+  margin-bottom: 15px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.publication-list a {
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.all-publications {
+  margin-top: 25px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* MOBILE */
+@media (max-width: 690px) {
+  .featured-publication {
+    grid-template-columns: 100px minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .publication-info h3 {
+    font-size: 16px;
+  }
+
+  .pub-description {
+    font-size: 14px;
+  }
+
+  .publication-image {
+    aspect-ratio: 4 / 3;
+  }
+
+  .publication-list li {
+    font-size: 15px;
+  }
+}
